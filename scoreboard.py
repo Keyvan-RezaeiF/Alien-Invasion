@@ -15,7 +15,7 @@ class ScoreBoard:
         self.stats = ai_game.stats
 
         # Font settings for scoring information.
-        self.text_color = (30, 30, 30)
+        self.text_color = (170, 170, 170)
         self.font = pygame.font.SysFont(None, 48)
         
         # Prepare the initial score image.
@@ -70,8 +70,8 @@ class ScoreBoard:
         self.ships = Group()
         for ship_number in range(self.stats.ships_left):
             ship = Ship(self.ai_game)
-            ship.rect.x = 10 + ship_number * ship.rect.width
-            ship.rect.y = 10
+            ship.rect.x = 10 + ship_number * (ship.rect.width/2)
+            ship.rect.y = 0
             self.ships.add(ship)
 
     def show_score(self):
